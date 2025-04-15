@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Ghost RDP
+Exec=bash -c 'qubes-run --dispvm=ghost-dvm --service qubes.VMShell /usr/bin/remmina -c /home/user/.local/share/remmina/ghost_proxy.remmina'
+Icon=org.remmina.Remmina
+Terminal=false
+Type=Application
+Categories=Network;

@@ -1,0 +1,12 @@
+<domain type='kvm'>
+  <name>kali-dvm</name>
+  <memory unit='MiB'>2048</memory>
+  <os>
+    <type arch='x86_64'>hvm</type>
+  </os>
+  <devices>
+    <disk type='file' device='disk'>
+      <source file='/var/lib/qubes/appvms/kali-dvm/root.img'/>
+    </disk>
+  </devices>
+</domain>

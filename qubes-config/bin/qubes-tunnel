@@ -1,0 +1,18 @@
+#!/bin/bash
+# Tunnel GUI sessions through Proxmox
+TARGET=$1
+PROTOCOL=${2:-rdp}
+
+case $PROTOCOL in
+  rdp)
+    xfreerdp /v:$TARGET /proxy:PROXMOX_GW:3389 /f +compression /gfx &
+    ;;
+  vnc)
+    ssh -L 5900:localhost:5900 user@proxmox-gw "vncviewer -via ghost-proxy $TARGET" &
+    ;;
+  ssh)
+    qubes-vm-connect --tunnel-only --filter=ghost-stack user@$TARGET
+    ;;
+esac
+
+echo "🛡️ Connection isolated in disposable qube: $(qvm-ls -l | grep DispVM)"

@@ -1,0 +1,10 @@
+<!-- Qubes RPC Policies -->
+<policy>
+  <service name="qubes.VMShell" label="ghost">
+    <allow user="root"/>
+  </service>
+  
+  <service name="qubes.ConnectTCP" label="ghost-proxy">
+    <allow dst="10.10.10.100-10.10.10.200"/>
+  </service>
+</policy>

@@ -1,0 +1,5 @@
+<vnc profile="ghost">
+  <rotate interval="300"/>
+  <proxy type="residential" provider="proxy-sale"/>
+  <compression level="9"/>
+</vnc>

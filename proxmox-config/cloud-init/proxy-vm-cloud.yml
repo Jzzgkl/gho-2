@@ -1,0 +1,14 @@
+# Cloud-init for Proxy VM
+hostname: proxy-vm
+manage_etc_hosts: true
+users:
+  - name: operator
+    ssh-authorized-keys:
+      - ssh-ed25519 AAAAC3Nz... your-key
+packages:
+  - lokinet
+  - pf
+  - dnscrypt-proxy
+runcmd:
+  - systemctl enable lokinet
+  - systemctl start lokinet
