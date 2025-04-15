@@ -1,0 +1,18 @@
+# ghost-noise.service
+[Unit]
+Description=Ghost Stack Noise Generator
+After=network.target
+
+[Service]
+ExecStart=/ghost-stack/scripts/utilities/noise-generator.sh
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+
+# lokinet-proxy-sale.path
+[Path]
+PathModified=/var/log/exit-rotation.log
+
+[Install]
+WantedBy=multi-user.target

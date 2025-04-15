@@ -1,0 +1,35 @@
+server_names = ['cloudflare', 'quad9-dnscrypt-ip4-filter-pri']
+listen_addresses = ['127.0.0.1:5300']
+ipv4_servers = true
+require_dnssec = true
+require_nolog = true
+require_nofilter = false
+
+[proxy]
+proxy = 'socks5://127.0.0.1:9050'
+
+[query_log]
+format = 'tsv'
+file = '/var/log/dnscrypt-queries.log'
+
+[server_names = ['cloudflare', 'quad9-dnscrypt-ip4-filter-pri']
+listen_addresses = ['127.0.0.1:5300']
+ipv4_servers = true
+require_dnssec = true
+require_nolog = true
+require_nofilter = false
+
+[proxy]
+proxy = 'socks5://127.0.0.1:9050'
+
+[query_log]
+format = 'tsv'
+file = '/var/log/dnscrypt-queries.log'
+
+[anonymized_dns]
+routes = [
+    { server_name='cloudflare', via=['anon-cs-pt', 'anon-cs-de'] }
+]anonymized_dns]
+routes = [
+    { server_name='cloudflare', via=['anon-cs-pt', 'anon-cs-de'] }
+]
